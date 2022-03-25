@@ -29,12 +29,13 @@ mkdir -p ~/.ssh
 cp "$ENV_DIR/BUILDPACK_SSH_KEY" ~/.ssh/id_rsa
 echo >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
+echo "-----> directory contents: $(ls -a)"
 
 # ignore/hide ssh warnings
-echo "Host *" >> /.ssh/config
-echo "   StrictHostKeyChecking no" >> /.ssh/config
-echo "   UserKnownHostsFile /dev/null" >> /.ssh/config
-echo "   LogLevel ERROR" >> /.ssh/config
+echo "Host *" >> ~/.ssh/config
+echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+echo "   UserKnownHostsFile /dev/null" >> ~/.ssh/config
+echo "   LogLevel ERROR" >> ~/.ssh/config
 echo "-----> Installed SSH key from BUILDPACK_SSH_KEY"
 
 
