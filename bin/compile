@@ -21,11 +21,12 @@ if [[ -z $BUILDPACK_SSH_KEY ]]; then
 fi
 
 # install the ssh key
+cd ~/
 echo "-----> working directory: $(pwd)"
 mkdir -p ~/.ssh
 # chmod 700 ~/.ssh
 # ssh-keyscan -H github.com >> /.ssh/known_hosts 2> /dev/null
-cp "$ENV_DIR/BUILDPACK_SSH_KEY" > ~/.ssh/id_rsa
+cp "$ENV_DIR/BUILDPACK_SSH_KEY" ~/.ssh/id_rsa
 echo >> ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
